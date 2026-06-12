@@ -12,15 +12,14 @@ import static org.tron.plugins.utils.Constant.ACCOUNT_TRC10_BALANCE;
 import static org.tron.plugins.utils.Constant.ACCOUNT_TRC10_ID;
 import static org.tron.plugins.utils.Constant.ACCOUNT_TYPE;
 import static org.tron.plugins.utils.Constant.ACTIVE_WITNESSES;
+import static org.tron.plugins.utils.Constant.ACTIVE_DEFAULT_OPERATIONS;
+import static org.tron.plugins.utils.Constant.ALLOW_MULTI_SIGN;
 import static org.tron.plugins.utils.Constant.ASSET_ISSUE_V2;
 import static org.tron.plugins.utils.Constant.CONTRACT_STORE;
 import static org.tron.plugins.utils.Constant.DYNAMIC_PROPERTY_STORE;
 import static org.tron.plugins.utils.Constant.LATEST_BLOCK_HEADER_TIMESTAMP;
-import static org.tron.plugins.utils.Constant.LATEST_BLOCK_TIMESTAMP;
-import static org.tron.plugins.utils.Constant.MAINTENANCE_INTERVAL;
 import static org.tron.plugins.utils.Constant.MAINTENANCE_TIME;
 import static org.tron.plugins.utils.Constant.MAINTENANCE_TIME_INTERVAL;
-import static org.tron.plugins.utils.Constant.NEXT_MAINTENANCE_TIME;
 import static org.tron.plugins.utils.Constant.STORAGE_ROW_STORE;
 import static org.tron.plugins.utils.Constant.WITNESS_ADDRESS;
 import static org.tron.plugins.utils.Constant.WITNESS_KEY;
@@ -73,6 +72,7 @@ public class DbForkTest {
   @Rule
   public final TemporaryFolder folder = new TemporaryFolder();
   private String dbPath;
+  private String forkPath;
 
   public void createDir() {
     String srcDir = dbPath + File.separator + "database";
